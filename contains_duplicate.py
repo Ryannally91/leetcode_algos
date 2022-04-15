@@ -30,3 +30,15 @@ def containsDup(nums):
     return False
 
 print(containsDup([2]))
+
+#should also work
+def containsDuplicates(arr):
+    if set(arr) != arr:
+        return True
+
+
+def rae(arr):
+    new= list(filter(lambda x: x != 2, arr))
+    print(new)
+
+rae([1,2,3,4])

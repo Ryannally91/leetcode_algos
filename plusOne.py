@@ -8,12 +8,40 @@ def plusOne(arr):
         for i in range(1,len(arr)):
             if arr[len(arr) - i] == 10:
                 arr[len(arr) - (i+1)] += 1
+                print(arr)
                 arr[len(arr) - i] = 0
+        if arr[0] == 10:
+            arr.insert(0, 1)
+            arr[1]= 0
+        print(arr)
         return arr
     
     return arr
 
-print(plusOne([1,2,9]))
-
+print(plusOne([9,9,9]))
+print(25.25)
+print(float(25.25))
 
 #output [1,3,0]  carried over.  dont know if thats what it was asking
+
+# leetcode
+# mine
+# class Solution:
+#     def plusOne(self, digits: List[int]) -> List[int]:
+#         digits[len(digits) - 1] = digits[len(digits) - 1] + 1
+#         if digits[len(digits) - 1] == 10:
+#             if len(digits) == 1:
+#                 digits= [1,0]
+#                 return digits
+#             for i in range(1,len(digits)):
+                
+#                 if digits[len(digits) - i] == 10:
+#                     digits[len(digits) - (i+1)] += 1
+#                     digits[len(digits) - i] = 0
+#                 if digits[0] == 10:
+#                     digits.insert(0,1)
+#                     digits[1]=0
+#             return digits
+
+#         return digits
+
