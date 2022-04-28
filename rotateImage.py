@@ -27,7 +27,7 @@ def rotate_image(matrix):
             print(i)
             top, bottom = l, r
             # save top left #reduces number of temp var you'll need. 
-            topLeft = matrix[top][l + i] #0,0 then 0,1 
+            topLeft = matrix[top][l + i] #this is temp var that will be used at end
             #move bottom left into top left
             matrix[top][l + i ] = matrix[bottom- i][l]
             #move bottomr right into bottom left
@@ -37,7 +37,7 @@ def rotate_image(matrix):
             # move top left into top right
             matrix[top + i][r] = topLeft
             print(matrix)
-        r -= 1
+        r -= 1 #These  increment in order to target inner sections
         l += 1
         
         return matrix

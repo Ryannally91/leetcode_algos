@@ -12,20 +12,28 @@
 #                 if i + j == target and i != j:
 #                     return i , j
 
-#optimized using two pointers (only one loop) O(n)
-# class Solution:
-#     def twoSum(self, nums: List[int], target: int) -> List[int]:
-#         j = len(nums)-1
-#         # sort list 
-#         nums = nums.sort()
-#         for i in range(len(nums)):
-#             if i + j == target and i != j:
-#                     return i , j
-#             elif i + j > target:
-#                 j -= 1
-#                 i -= 1
-#             else:
-#                 continue
+'''
+most optimal -one pass
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hashmap = {}
+        for i in range(len(nums)):
+            complement = target - nums[i]
+            if complement in hashmap:
+                return [i, hashmap[complement]]
+            hashmap[nums[i]] = i
+'''
+# my version
+'''class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        addends={}
+        for i in range(len(nums)):
+            key_= target-nums[i]
+            if key_ in addends:
+                return [i, addends[key_]]
+            addends[nums[i]] = i  #here you want to add val: index  Not Target - currVal
+            '''
+
 k= [3,5,2,7,1,8,4]
 print(sorted(k))
 def twoSum(nums, target):
